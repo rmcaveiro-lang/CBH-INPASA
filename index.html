@@ -459,33 +459,77 @@ section.dark,section.dark+section{border-top:0}
 }
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv.pre{opacity:1;transform:none}}
+
+/* CAPA no formato do relatório JHSF: foto inteira em cima, texto sobre o escuro, número em destaque */
+.cover{padding:0;display:block;overflow:hidden;background:#121716;color:#F2F3F1;border:0}
+.cv-bg{position:relative;height:min(calc(100vw / 2.3),70svh);margin-top:64px}
+.cv-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 74%;display:block}
+.cv-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,23,22,.35) 0%,rgba(18,23,22,0) 18%,rgba(18,23,22,0) 86%,#121716 100%)}
+.cv-copy{position:relative;z-index:2;padding-top:clamp(28px,3vw,44px);padding-bottom:clamp(48px,6vw,88px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:start}
+.cv-l{display:flex;flex-direction:column;gap:18px}
+.cv-r{display:flex;flex-direction:column;gap:18px}
+.cover .h1{color:#F2F3F1;font-size:clamp(44px,5.6vw,88px)}
+.cover .h1 .x{color:#EBA136}
+.cover .tag{color:#C9D8EE}
+.cover .lead{color:#D9DDDB;max-width:44ch}
+.cv-val{margin:0;color:#D9DDDB;font-size:clamp(16px,1.4vw,19px);max-width:40ch}
+.cv-val span{display:block;font-weight:300;font-variation-settings:"wdth" 108;letter-spacing:-.02em;font-size:clamp(42px,4.6vw,70px);line-height:1.02;color:#EBA136;font-variant-numeric:tabular-nums}
+.cover .btn{background:#F2F3F1;color:#16191A}
+.cover .btn:hover{background:#EBA136;color:#16191A}
+.cover .cap{right:var(--gut);top:calc(64px + 14px);bottom:auto;z-index:3}
+.cv-stats{background:#121716;color:#F2F3F1;border-top:1px solid #2E3836}
+.cv-stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cv-stats .wrap>div{padding:26px 22px 30px 0;display:flex;flex-direction:column;gap:6px}
+.cv-stats .wrap>div+div{padding-left:22px;border-left:1px solid #2E3836}
+.cv-stats b{font-weight:300;font-variation-settings:"wdth" 110;font-size:clamp(34px,3.6vw,54px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cv-stats span{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A3ACA8}
+.cv-stats+section{border-top:0}
+@media (max-width:900px){
+  .cv-bg{height:52svh;margin-top:56px}
+  .cv-bg img{object-position:40% 66%}
+  .cv-copy{grid-template-columns:1fr;gap:20px}
+  .cv-stats .wrap{grid-template-columns:1fr 1fr}
+  .cv-stats .wrap>div:nth-child(3){border-left:0;padding-left:0}
+  .cv-stats .wrap>div:nth-child(n+3){border-top:1px solid #2E3836}
+}
+.cv-bg img{transition:transform 2.4s var(--ease)}
+.hero.cover.pre .cv-bg img{transform:scale(1.06)}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
 <header class="top">
-  <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="https://inpasa.com.br/images/logo-inpasa-r.png" alt="Inpasa" onerror="fallbackLogo(this)"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-verde.png" alt="CBH"></a>
+  <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo.png" alt="Inpasa" width="201" height="58"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-verde.png" alt="CBH"></a>
   <nav class="topnav" aria-label="Seções">
     <a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#master">Master</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
   </nav>
 </header>
 
 <!-- 01 CAPA -->
-<section class="hero" id="capa" data-sec>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
+<section class="hero cover" id="capa" data-sec>
+  <div class="cv-bg"><img src="assets/hero-inpasa.jpg" alt="Cavaleiro em cavalo tordilho na volta da vitória diante da faixa de LED com a marca Inpasa e da arquibancada lotada" fetchpriority="high"></div>
+  <div class="wrap cv-copy">
+    <div class="cv-l">
       <span class="tag">Proposta CBH · Temporada 2027</span>
       <h1 class="h1">INPASA <span class="x">×</span> CBH</h1>
+    </div>
+    <div class="cv-r">
+      <p class="cv-val"><span>R$ 3 milhões</span> em premiação no Circuito Senior Top 2027</p>
       <p class="lead">Um lounge de relacionamento no centro do hipismo brasileiro. O esporte é o palco. A Inpasa recebe.</p>
       <div><a class="btn" href="#plataformas">Ver formatos <i></i></a></div>
     </div>
-    <figure class="hero-fig">
-      <img src="assets/banner-principal.jpg" alt="Conjunto saltando obstáculo em Grande Prêmio noturno, com público ao fundo" fetchpriority="high" style="object-position:34% 40%">
-      <figcaption class="cap">Circuito Senior Top · registro real</figcaption>
-    </figure>
   </div>
+  <span class="cap">Composição conceitual</span>
 </section>
+<div class="cv-stats">
+  <div class="wrap">
+    <div><b>10</b><span>etapas do Senior Top</span></div>
+    <div><b>4</b><span>estados</span></div>
+    <div><b>15h30</b><span>Grande Prêmio aos sábados</span></div>
+    <div><b>8</b><span>meses de temporada</span></div>
+  </div>
+</div>
 
 <!-- 02 AFINIDADE -->
 <section id="afinidade" class="dark" data-sec>
