@@ -583,6 +583,13 @@ section.dark,section.dark+section{border-top:0}
 @media (max-width:600px){.vmodal{padding:56px 10px 44px}.vmodal-box{height:min(76vh,440px)}}
 
 .cv-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+
+.hero-snd{all:unset;cursor:pointer;position:absolute;right:var(--gut);bottom:28px;z-index:4;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F2F3F1;background:rgba(18,23,22,.62);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);padding:10px 16px;border-radius:999px;transition:background .2s,border-color .2s}
+.hero-snd svg{width:18px;height:18px}
+.hero-snd:hover{background:rgba(14,82,65,.9);border-color:#EBA136}
+.hero-snd:focus-visible{outline:2px solid #EBA136;outline-offset:3px}
+.hero-snd[aria-pressed="true"]{border-color:#EBA136}
+@media (max-width:900px){.hero-snd{bottom:16px;font-size:11px;padding:8px 13px}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -597,7 +604,7 @@ section.dark,section.dark+section{border-top:0}
 
 <!-- 01 CAPA -->
 <section class="hero cover" id="capa" data-sec>
-  <div class="cv-bg"><video id="heroVid" src="assets/hero-indoor.mp4" poster="assets/hero-indoor-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Filme do 36º JHSF Indoor: Grande Prêmio, pódio e público na arena"></video></div>
+  <div class="cv-bg"><video id="heroVid" src="assets/hero-indoor.mp4" poster="assets/hero-indoor-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Filme do 36º JHSF Indoor: Grande Prêmio, pódio e público na arena"></video><button class="hero-snd" id="heroSnd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z" fill="currentColor"/></svg><span>Assistir com áudio</span></button></div>
   <div class="wrap cv-copy">
     <div class="cv-l">
       <span class="tag">Proposta CBH · Temporada 2027</span>
@@ -1042,5 +1049,10 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList
 <script>(function(){var v=document.getElementById("cxVid"),b=document.querySelector(".cx-snd");if(!v||!b)return;
 b.addEventListener("click",function(){v.muted=!v.muted;if(!v.muted){v.play().catch(function(){})}b.textContent=v.muted?"Ativar som":"Desativar som";b.setAttribute("aria-pressed",String(!v.muted))});
 new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{threshold:.25}).observe(v)})();</script>
+<script>(function(){var v=document.getElementById("heroVid"),b=document.getElementById("heroSnd");if(!v||!b)return;var t=b.querySelector("span"),LOOP=v.getAttribute("src"),FILM="assets/indoor-filme.mp4",full=false;
+function toLoop(){full=false;v.src=LOOP;v.loop=true;v.muted=true;v.play().catch(function(){});t.textContent="Assistir com áudio";b.setAttribute("aria-pressed","false")}
+b.addEventListener("click",function(){if(!full){full=true;v.src=FILM;v.loop=false;v.muted=false;v.currentTime=0;v.play().catch(function(){v.muted=true;v.play()});t.textContent="Voltar sem áudio";b.setAttribute("aria-pressed","true")}else{toLoop()}});
+v.addEventListener("ended",function(){if(full)toLoop()});
+document.addEventListener("visibilitychange",function(){if(document.hidden&&full)v.pause()});})();</script>
 </body>
 </html>
