@@ -494,6 +494,12 @@ section.dark,section.dark+section{border-top:0}
 }
 .cv-bg img{transition:transform 2.4s var(--ease)}
 .hero.cover.pre .cv-bg img{transform:scale(1.06)}
+
+/* Master: foto acompanha a altura do texto */
+.namegrid{align-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}
+@media (max-width:900px){.namegrid{grid-template-columns:1fr}}
+.namegrid .fence{aspect-ratio:auto;height:100%;min-height:420px}
+@media (max-width:900px){.namegrid .fence{aspect-ratio:3/2;height:auto;min-height:0}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -673,7 +679,7 @@ section.dark,section.dark+section{border-top:0}
         <div><b>Premiação</b><span>Executivo Inpasa na entrega do troféu</span></div>
       </div>
     </div>
-    <figure class="fence rv" style="margin:0"><img class="fimg on" data-k="a" data-cap="Obstáculo assinatura · conceito ilustrativo" src="assets/obstaculo-inpasa.jpg" alt="Conjunto saltando obstáculo com montantes e varas com a marca Inpasa" loading="lazy" style="object-position:50% 20%"><img class="fimg" data-k="b" data-cap="Placas de pista · conceito ilustrativo" src="assets/placas-inpasa.jpg" alt="Conjunto de adestramento passando diante das placas de pista com a marca Inpasa" loading="lazy" style="object-position:50% 30%"><img class="fimg" data-k="c" data-cap="Backdrop de premiação · conceito ilustrativo" src="assets/backdrop-inpasa.jpg" alt="Cavaleiro premiado com medalha e flores diante do backdrop com as marcas Inpasa e CBH" loading="lazy" style="object-position:50% 20%"><figcaption class="cap" id="fenceCap">Obstáculo assinatura · conceito ilustrativo</figcaption></figure>
+    <figure class="fence rv" style="margin:0"><img class="fimg on" data-k="a" data-cap="Obstáculo assinatura · conceito ilustrativo" src="assets/obstaculo-inpasa.jpg" alt="Conjunto saltando obstáculo com montantes e varas com a marca Inpasa" loading="lazy" style="object-position:34% 20%"><img class="fimg" data-k="b" data-cap="Placas de pista · conceito ilustrativo" src="assets/placas-inpasa.jpg" alt="Conjunto de adestramento passando diante das placas de pista com a marca Inpasa" loading="lazy" style="object-position:4% 30%"><img class="fimg" data-k="c" data-cap="Backdrop de premiação · conceito ilustrativo" src="assets/backdrop-inpasa.jpg" alt="Cavaleiro premiado com medalha e flores diante do backdrop com as marcas Inpasa e CBH" loading="lazy" style="object-position:50% 20%"><figcaption class="cap" id="fenceCap">Obstáculo assinatura · conceito ilustrativo</figcaption></figure>
   </div>
 </section>
 
