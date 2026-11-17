@@ -562,11 +562,13 @@ section.dark,section.dark+section{border-top:0}
 
 /* Fechamento: foto inteira em cima, texto embaixo, sem cobrir a equipe */
 .closing{display:block;min-height:0;background:#121716}
-.closing img{position:relative;inset:auto;height:min(calc(100vw / 1.5),86svh);object-position:50% 18%!important}
-.closing::after{inset:0 0 auto 0;height:min(calc(100vw / 1.5),86svh);background:linear-gradient(180deg,rgba(18,23,22,0) 78%,#121716 100%)}
-.closing .wrap{padding-top:clamp(28px,3.5vw,48px)}
+.closing::after{content:none}
+.cl-photo{position:relative;height:min(calc(100vw / 1.5),86svh);overflow:hidden}
+.cl-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%!important}
+.cl-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,23,22,0) 72%,rgba(18,23,22,.55) 88%,#121716 100%)}
+.closing .wrap{padding-top:clamp(20px,2.5vw,36px)}
 .closing .cl-cap{position:absolute;top:16px;right:var(--gut);left:auto;bottom:auto;z-index:3}
-@media (max-width:900px){.closing img,.closing::after{height:72vw}.closing .wrap{grid-template-columns:1fr}}
+@media (max-width:900px){.cl-photo{height:72vw}.closing .wrap{grid-template-columns:1fr}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -809,8 +811,7 @@ section.dark,section.dark+section{border-top:0}
 
 <!-- 12 FECHAMENTO -->
 <section class="closing" id="fechamento" data-sec>
-  <img src="assets/fechamento-equipe.jpg" alt="Cavaleiro da equipe brasileira saindo da pista cercado pela equipe com uniformes Inpasa e CBH" loading="lazy" style="object-position:50% 30%">
-  <span class="cap cl-cap">Equipe brasileira · composição conceitual</span>
+  <div class="cl-photo"><img src="assets/fechamento-equipe.jpg" alt="Cavaleiro da equipe brasileira saindo da pista cercado pela equipe com uniformes Inpasa e CBH" loading="lazy" style="object-position:50% 30%"><span class="cap cl-cap">Equipe brasileira · composição conceitual</span></div>
   <div class="wrap">
     <div>
       <h2 class="h1">O próximo salto começa aqui.</h2>
