@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="INPASA × CBH: lounge de relacionamento no hipismo brasileiro.">
+<meta name="description" content="INPASA × CBH: Hospitality, Prêmio Hipismo Brasil e Naming Senior Top.">
 <meta property="og:title" content="INPASA × CBH">
-<meta property="og:description" content="Lounge de relacionamento no hipismo brasileiro.">
+<meta property="og:description" content="Hospitality, Prêmio Hipismo Brasil e Naming Senior Top.">
 <meta property="og:image" content="assets/banner-principal.jpg">
 <title>INPASA × CBH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -583,6 +583,17 @@ section.dark,section.dark+section{border-top:0}
 @media (max-width:600px){.vmodal{padding:56px 10px 44px}.vmodal-box{height:min(76vh,440px)}}
 
 .cv-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+/* Hospitality: lista dos 6 eventos */
+.hosp-ev{margin-top:clamp(40px,5vw,64px);border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.hosp-ev-head{display:flex;justify-content:space-between;gap:16px;color:#9DBBE6;margin-bottom:18px}
+.hosp-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12)}
+.hosp-grid>div{background:#121716;padding:20px 18px 22px;display:flex;flex-direction:column;gap:6px}
+.hosp-grid b{font-weight:300;font-size:clamp(34px,3.4vw,52px);line-height:1;color:#EBA136;font-variant-numeric:tabular-nums}
+.hosp-grid .uf{font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#F2F3F1}
+.hosp-grid p{margin:0;font-size:14px;line-height:1.45;color:#C9CECB}
+.premio-sec .premio{margin-top:0}
+@media (max-width:1000px){.hosp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.hosp-grid{grid-template-columns:1fr}}
 
 .hero-snd{all:unset;cursor:pointer;position:absolute;right:var(--gut);bottom:28px;z-index:4;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F2F3F1;background:rgba(18,23,22,.62);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);padding:10px 16px;border-radius:999px;transition:background .2s,border-color .2s}
 .hero-snd svg{width:18px;height:18px}
@@ -598,7 +609,7 @@ section.dark,section.dark+section{border-top:0}
 <header class="top">
   <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo-branco.svg" alt="Inpasa" width="428" height="124"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-branco.png" alt="CBH"></a>
   <nav class="topnav" aria-label="Seções">
-    <a href="#lounge">Lounge</a><a href="#premio">Prêmio Hipismo Brasil</a><a href="#experiencias">Experiências</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
+    <a href="#lounge">Hospitality</a><a href="#experiencias">Experiências</a><a href="#premio">Prêmio Hipismo Brasil</a><a href="#brasil">Naming Senior Top</a><a href="#plataformas">Formatos</a>
   </nav>
 </header>
 
@@ -611,7 +622,7 @@ section.dark,section.dark+section{border-top:0}
       <h1 class="h1">INPASA <span class="x">×</span> CBH</h1>
     </div>
     <div class="cv-r">
-      <p class="cv-val"><span>Lounge INPASA</span> em cada etapa do Circuito Senior Top 2027</p>
+      <p class="cv-val"><span>Hospitality INPASA</span> em 6 eventos do hipismo brasileiro em 2027</p>
       <p class="lead">O melhor lugar do evento para receber clientes, parceiros e fornecedores. O esporte é o palco. A Inpasa recebe.</p>
       <div><a class="btn" href="#plataformas">Ver formatos <i></i></a></div>
     </div>
@@ -620,10 +631,10 @@ section.dark,section.dark+section{border-top:0}
 </section>
 <div class="cv-stats">
   <div class="wrap">
-    <div><b>10</b><span>etapas do Senior Top</span></div>
-    <div><b>4</b><span>estados</span></div>
-    <div><b>15h30</b><span>Grande Prêmio aos sábados</span></div>
-    <div><b>8</b><span>meses de temporada</span></div>
+    <div><b>6</b><span>eventos de Hospitality</span></div>
+    <div><b>5</b><span>estados</span></div>
+    <div><b>1</b><span>Prêmio Hipismo Brasil</span></div>
+    <div><b>10</b><span>etapas com Naming Senior Top</span></div>
   </div>
 </div>
 
@@ -663,14 +674,14 @@ section.dark,section.dark+section{border-top:0}
   <div class="wrap">
     <div class="casa-head">
       <div class="stack rv">
-        <span class="tag">Lounge de relacionamento</span>
+        <span class="tag">Hospitality INPASA</span>
         <h2 class="h2">O melhor lugar do evento é da Inpasa.</h2>
       </div>
       <p class="body rv">Um espaço exclusivo com vista para a pista, onde a Inpasa recebe clientes, parceiros e fornecedores. Cada convite tem um anfitrião e uma razão para estar ali.</p>
     </div>
     <div class="plate rv">
       <span class="mono">Nome do espaço · nomes ilustrativos</span>
-      <div class="nm" id="casaRot">Lounge <b>INPASA</b></div>
+      <div class="nm" id="casaRot">Hospitality <b>INPASA</b></div>
     </div>
     <div class="reach rv">
       <div><span class="h3">Vista para a pista</span><p>O lugar mais disputado do evento, reservado aos convidados da Inpasa.</p></div>
@@ -678,6 +689,38 @@ section.dark,section.dark+section{border-top:0}
       <div><span class="h3">Mesa de negócios</span><p>Um espaço reservado para as conversas que precisam acontecer.</p></div>
       <div><span class="h3">Experiências exclusivas</span><p>Reconhecimento de pista, bastidores e encontro com atletas.</p></div>
     </div>
+    <div class="hosp-ev rv">
+      <div class="hosp-ev-head"><span class="mono">6 eventos · 5 estados</span><span class="mono">Calendário CBH 2027</span></div>
+      <div class="hosp-grid">
+        <div><b>2</b><span class="uf">São Paulo</span><p>Dois eventos, com datas a definir no calendário 2027.</p></div>
+        <div><b>1</b><span class="uf">Goiás</span><p>CBS de Escolas.</p></div>
+        <div><b>1</b><span class="uf">Santa Catarina</span><p>CBS de Master.</p></div>
+        <div><b>1</b><span class="uf">Brasília</span><p>Aniversário da Sociedade Hípica de Brasília.</p></div>
+        <div><b>1</b><span class="uf">Paraná</span><p>Um evento à escolha da Inpasa: CSI-W Curitiba ou Aniversário da SHPR.</p></div>
+      </div>
+      <p class="note">Datas sujeitas à confirmação no calendário oficial. Estrutura do espaço ajustada a cada sede.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 EXPERIÊNCIAS -->
+<section id="experiencias" data-sec>
+  <div class="wrap">
+    <div class="stack rv">
+      <h2 class="h2">Experiências que só a Inpasa oferece.</h2>
+      <p class="body">Além da hospitalidade, cada evento de Hospitality pode ter uma experiência proprietária ligada ao portfólio. A escolha depende de quem a Inpasa quer receber.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="modtabs rv" role="tablist" id="modtabs" aria-label="Experiências"></div>
+      <div id="modpanel" class="rv"></div>
+    </div>
+    <p class="note">Nomes ilustrativos. Conteúdos técnicos validados pela Inpasa. O DDGS não é oferecido para alimentação dos cavalos durante o evento.</p>
+  </div>
+</section>
+
+<!-- 05B PRÊMIO HIPISMO BRASIL -->
+<section id="premio-sec" class="dark premio-sec" data-sec>
+  <div class="wrap">
     <div class="premio" id="premio" data-sec style="scroll-margin-top:90px">
       <div class="premio-text">
       <div class="stack rv">
@@ -689,7 +732,7 @@ section.dark,section.dark+section{border-top:0}
         <div><span class="h3">Categoria INPASA</span><p>Um prêmio assinado pela marca, como o destaque do ano em uma modalidade.</p></div>
         <div><span class="h3">Palco</span><p>Executivo Inpasa na entrega do troféu, com citação na cerimônia.</p></div>
         <div><span class="h3">Mesa INPASA</span><p>Convidados da Inpasa na noite, ao lado dos premiados e da CBH.</p></div>
-        <div><span class="h3">Recepção</span><p>Boas-vindas com a marca antes da cerimônia, no padrão do lounge.</p></div>
+        <div><span class="h3">Recepção</span><p>Boas-vindas com a marca antes da cerimônia, no padrão do Hospitality INPASA.</p></div>
         <div><span class="h3">Conteúdo</span><p>Bastidores e entrevistas com os premiados para os canais da CBH e da Inpasa.</p></div>
       </div>
       <p class="note rv">Sugestões de entregáveis, sujeitas a validação com a CBH.</p>
@@ -700,21 +743,6 @@ section.dark,section.dark+section{border-top:0}
         <button class="snd" type="button" aria-pressed="false">Ativar som</button>
       </figure>
     </div>
-  </div>
-</section>
-
-<!-- 05 EXPERIÊNCIAS -->
-<section id="experiencias" data-sec>
-  <div class="wrap">
-    <div class="stack rv">
-      <h2 class="h2">Experiências que só a Inpasa oferece.</h2>
-      <p class="body">Além da hospitalidade, cada etapa pode ter uma experiência proprietária ligada ao portfólio. A escolha depende de quem a Inpasa quer receber.</p>
-    </div>
-    <div class="mod-grid">
-      <div class="modtabs rv" role="tablist" id="modtabs" aria-label="Experiências"></div>
-      <div id="modpanel" class="rv"></div>
-    </div>
-    <p class="note">Nomes ilustrativos. Conteúdos técnicos validados pela Inpasa. O DDGS não é oferecido para alimentação dos cavalos durante o evento.</p>
   </div>
 </section>
 
@@ -733,8 +761,8 @@ section.dark,section.dark+section{border-top:0}
   <div class="wrap">
     <div class="prize">
       <div class="prize-head rv">
-        <span class="tag">Circuito nacional de alto rendimento do salto</span>
-        <h2 class="h1">Circuito Senior Top</h2>
+        <span class="tag">Naming do circuito nacional de alto rendimento do salto</span>
+        <h2 class="h1">Naming Senior Top</h2>
       </div>
       <div class="prize-body">
         <div class="prize-card rv">
@@ -744,26 +772,26 @@ section.dark,section.dark+section{border-top:0}
         </div>
         <div class="stack rv" style="gap:18px">
           <p class="lead">O circuito mais disputado do salto brasileiro. A premiação atrai os melhores conjuntos do país e, com eles, proprietários, criadores, empresários e famílias que acompanham cada etapa de perto.</p>
-          <p class="body">Um público de alto padrão, com Grande Prêmio em horário fixo. É onde o lounge da Inpasa pode receber convidados ao longo de toda a temporada, de abril a novembro.</p>
+          <p class="body">Um público de alto padrão, com Grande Prêmio em horário fixo e presença nacional de abril a novembro. Com o naming, a Inpasa passa a dar nome ao circuito durante toda a temporada.</p>
         </div>
       </div>
     </div>
     <div class="br">
       <div class="map rv" id="map"></div>
       <div class="rv">
-        <h2 class="h2">Um lounge. Um circuito. Um país.</h2>
-        <p class="body" style="margin-top:18px">A Inpasa pode acompanhar a temporada inteira, levando o lounge e o time comercial regional a cada praça.</p>
+        <h2 class="h2">Um nome. Um circuito. Um país.</h2>
+        <p class="body" style="margin-top:18px">A marca Inpasa assina o circuito em todas as praças, no ranking da temporada e na final.</p>
         <div class="pracas"><div><span class="n" data-u="etapas">4</span><span class="mono">São Paulo</span></div><div><span class="n" data-u="etapas">2</span><span class="mono">Rio de Janeiro</span></div><div><span class="n" data-u="etapas">2</span><span class="mono">Paraná</span></div><div><span class="n" data-u="etapa">1</span><span class="mono">Brasília</span></div></div>
         <p class="stage" id="stage"></p>
         <div class="circname"><span class="mono">Naming do circuito</span><b><span>INPASA</span> Senior Top</b></div>
       </div>
     </div>
     <div class="tour">
-      <div class="rv"><span class="h3">Lounge em todas as etapas</span><p>O mesmo padrão de hospitalidade, do SHP Open à final no Rio.</p></div>
-      <div class="rv"><span class="h3">Naming do circuito</span><p>Nome da marca em todas as etapas, no ranking e na final da temporada.</p></div>
-      <div class="rv"><span class="h3">Anfitrião regional</span><p>O time comercial Inpasa de cada região recebe seus convidados.</p></div>
-      <div class="rv"><span class="h3">Convidados de outras praças</span><p>Clientes de MT, MS, GO, BA e MA convidados para as etapas.</p></div>
-      <div class="rv"><span class="h3">Conteúdo da temporada</span><p>Série acompanhando atletas, convidados e histórias do campo.</p></div>
+      <div class="rv"><span class="h3">Naming do circuito</span><p>INPASA Senior Top como nome oficial da temporada 2027.</p></div>
+      <div class="rv"><span class="h3">Todas as etapas</span><p>O nome presente nas 10 etapas, em quatro estados.</p></div>
+      <div class="rv"><span class="h3">Ranking da temporada</span><p>Ranking oficial com o nome do circuito, atualizado a cada etapa.</p></div>
+      <div class="rv"><span class="h3">Comunicação oficial</span><p>Site, redes e materiais da CBH com o nome do circuito.</p></div>
+      <div class="rv"><span class="h3">Conteúdo da temporada</span><p>Série acompanhando atletas e histórias do circuito.</p></div>
       <div class="rv"><span class="h3">Final e TOP TEN</span><p>Campeão do ranking premiado com a Inpasa no centro da cerimônia.</p></div>
     </div>
     <p class="note">Calendário proposto para 2027: SHP Open, CSI-W Curitiba, Copa JK, Copa São Paulo, Campeonato Brasileiro (sede a definir), Aniversário CHSA, Copa Village Mall, Agromen, Aniversário SHPR e CSI-W Rio de Janeiro (final). Datas sujeitas à confirmação. Nome do circuito sujeito a aprovação.</p>
@@ -795,7 +823,7 @@ section.dark,section.dark+section{border-top:0}
     <div class="screens">
       <div class="rv">
         <h2 class="h2">Da arena para as telas.</h2>
-        <p class="body" style="margin-top:14px">Série da temporada, bastidores do lounge e histórias do campo, publicados nos canais oficiais da CBH e prontos para os canais da Inpasa.</p>
+        <p class="body" style="margin-top:14px">Série da temporada, bastidores do Hospitality e histórias do campo, publicados nos canais oficiais da CBH e prontos para os canais da Inpasa.</p>
         <div class="digital" id="digital"></div>
         <p class="note">Instagram @cbhoficial, janeiro a setembro de 2026.</p>
       </div>
@@ -892,7 +920,7 @@ const modalities = [
    ex:"Duas Arenas, Uma Energia"}
 ];
 
-const casaNames = ['Lounge <b>INPASA</b>','<b>INPASA</b> Conecta','Camarote <b>INPASA</b>'];
+const casaNames = ['Hospitality <b>INPASA</b>','Lounge <b>INPASA</b>','<b>INPASA</b> Conecta'];
 
 /* Circuito Senior Top 2027: etapas por praça (Brasileiro com sede a definir) */
 const stops = [
@@ -904,18 +932,18 @@ const stops = [
 
 /* Investimento: null aparece como "Sob consulta" */
 const platforms = [
-  {name:"Lounge por evento", price:"R$ 250 mil", per:"por evento", idea:"Lounge de relacionamento em um evento selecionado, com hospitalidade, experiência e convidados da Inpasa.", items:["Lounge com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no lounge","Relatório da etapa"]},
+  {name:"Hospitality INPASA", price:"R$ 250 mil", per:"por evento", idea:"Espaço de relacionamento em até 6 eventos: 2 em São Paulo, CBS de Escolas em Goiás, CBS de Master em Santa Catarina, Aniversário da SHBr e 1 evento à escolha no Paraná.", items:["Espaço com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no espaço","Relatório por evento"]},
   {name:"Prêmio Hipismo Brasil", price:"R$ 200 mil", per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
-  {name:"Circuito Senior Top", price:"R$ 800 mil", per:"temporada 2027", idea:"O lounge acompanha as 10 etapas do circuito em quatro estados, com naming da temporada e anfitrião comercial em cada praça.", items:["Naming do circuito","Lounge nas 10 etapas","Anfitrião comercial regional","Experiências proprietárias","Final e TOP TEN","Ranking e conteúdo"]},
-  {name:"Parceria", full:true, price:"R$ 2 milhões", per:"temporada 2027", idea:"Circuito Senior Top e Prêmio Hipismo Brasil, com o lounge como plataforma da temporada inteira.", items:["Circuito Senior Top","Prêmio Hipismo Brasil","Lounge em todas as etapas","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por etapa"]}
+  {name:"Naming Senior Top", price:"R$ 800 mil", per:"temporada 2027", idea:"A Inpasa dá nome ao circuito nacional de alto rendimento do salto, nas 10 etapas, no ranking e na final.", items:["INPASA Senior Top","Nome nas 10 etapas","Ranking da temporada","Final e TOP TEN","Comunicação oficial CBH","Conteúdo da temporada"]},
+  {name:"Parceria", full:true, price:"R$ 2 milhões", per:"temporada 2027", idea:"Hospitality nos 6 eventos, Prêmio Hipismo Brasil e Naming Senior Top em um único pacote para a temporada.", items:["Hospitality nos 6 eventos","Prêmio Hipismo Brasil","Naming Senior Top","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por evento"]}
 ];
 
-const delivCols = ["Lounge","Prêmio","Senior Top","360º"];
+const delivCols = ["Hospitality","Prêmio","Naming","360º"];
 const deliv = [
-  ["Lounge de relacionamento",2,0,2,2],["Hospitalidade e anfitriões",2,2,2,2],["Experiência proprietária",1,0,2,2],
-  ["Naming do circuito",0,0,2,2],["Todas as etapas do circuito",0,0,2,2],["Final e TOP TEN",0,0,2,2],
+  ["Espaço Hospitality INPASA",2,0,0,2],["6 eventos em 5 estados",2,0,0,2],["Experiência proprietária",1,0,0,2],
   ["Categoria INPASA no Prêmio",0,2,0,2],["Mesa INPASA na cerimônia",0,2,0,2],
-  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório por etapa",2,1,2,2]
+  ["Naming do circuito",0,0,2,2],["Nome nas 10 etapas",0,0,2,2],["Final e TOP TEN",0,0,2,2],
+  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório de entregas",2,1,2,2]
 ];
 
 /* ===================================================================== */
@@ -965,7 +993,7 @@ rotate($("#casaRot"),casaNames,3400,x=>x);
   let r="";for(let i=0;i<order.length-1;i++){const a=pts[order[i]].xy,b=pts[order[i+1]].xy,mx=(a[0]+b[0])/2+(b[1]-a[1])*.18,my=(a[1]+b[1])/2-(b[0]-a[0])*.18;r+=`M${a[0].toFixed(1)} ${a[1].toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${b[0].toFixed(1)} ${b[1].toFixed(1)} `}
   const nodes=pts.map((s,i)=>{const[x,y]=s.xy;return `<g class="node" tabindex="0" role="button" aria-label="${esc(s.name)}, ${s.n} ${s.n>1?"etapas":"etapa"}" data-i="${i}"><circle class="halo" cx="${x}" cy="${y}" r="${5+s.n*2}"/><circle class="core" cx="${x}" cy="${y}" r="2.6"/><text x="${x+s.dx}" y="${y+s.dy}" text-anchor="${s.anchor}">${s.name} · ${s.n}</text></g>`}).join("");
   $("#map").innerHTML=`<svg viewBox="0 0 470 425" role="img" aria-label="Mapa do Circuito Senior Top: etapas em São Paulo, Paraná, Brasília e Rio de Janeiro"><g fill="#C9CFCC">${BR.dots}</g><path d="${BR.d}" fill="none" stroke="var(--ink)" stroke-width=".9" stroke-linejoin="round" opacity=".55"/><path class="route draw" pathLength="1" d="${r}"/>${reduce?"":`<path class="route move" d="${r}"/>`}${nodes}</svg>`;
-  const pick=i=>{document.querySelectorAll(".node").forEach(n=>n.classList.toggle("on",+n.dataset.i===i));$("#stage").innerHTML=`<b>${esc(pts[i].name)}</b> · ${pts[i].n} ${pts[i].n>1?"etapas":"etapa"}. Lounge, anfitrião comercial e convidados da região.`};
+  const pick=i=>{document.querySelectorAll(".node").forEach(n=>n.classList.toggle("on",+n.dataset.i===i));$("#stage").innerHTML=`<b>${esc(pts[i].name)}</b> · ${pts[i].n} ${pts[i].n>1?"etapas":"etapa"}. Naming INPASA Senior Top em todas as provas da praça.`};
   document.querySelectorAll(".node").forEach(n=>{const i=+n.dataset.i;n.addEventListener("click",()=>pick(i));n.addEventListener("mouseenter",()=>pick(i));n.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(i)}})});
   pick(0);
 })();
