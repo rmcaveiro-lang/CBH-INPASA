@@ -591,20 +591,22 @@ section.dark,section.dark+section{border-top:0}
     <div class="premio">
       <div class="premio-text">
       <div class="stack rv">
-        <h3 class="h2" style="font-size:clamp(24px,2.6vw,38px)">Uma tarde que termina com um próximo passo.</h3>
-        <p class="body">A experiência começa na chegada e segue até o pódio. O Grande Prêmio é o ponto alto, e a conversa continua com o time comercial da Inpasa.</p>
+        <span class="tag">Prêmio Hipismo Brasil</span>
+        <h3 class="h2" style="font-size:clamp(24px,2.6vw,38px)">Todas as modalidades em uma única noite.</h3>
+        <p class="body">A celebração anual da CBH reúne atletas, proprietários, criadores e dirigentes de todas as modalidades no mesmo espaço. Uma oportunidade para a Inpasa fechar a temporada no centro do hipismo brasileiro.</p>
       </div>
       <div class="moments rv">
-        <div><span class="h3">Chegada</span><p>Recepção e credenciamento com anfitrião Inpasa.</p></div>
-        <div><span class="h3">Pista</span><p>Reconhecimento de percurso com especialista.</p></div>
-        <div><span class="h3">Grande Prêmio</span><p>Sábado às 15h30, com vista privilegiada.</p></div>
-        <div><span class="h3">Pódio</span><p>Executivo Inpasa na entrega do troféu.</p></div>
-        <div><span class="h3">Mesa</span><p>Conversa de negócios e próximo passo registrado.</p></div>
+        <div><span class="h3">Categoria INPASA</span><p>Um prêmio assinado pela marca, como o destaque do ano em uma modalidade.</p></div>
+        <div><span class="h3">Palco</span><p>Executivo Inpasa na entrega do troféu, com citação na cerimônia.</p></div>
+        <div><span class="h3">Mesa INPASA</span><p>Convidados da Inpasa na noite, ao lado dos premiados e da CBH.</p></div>
+        <div><span class="h3">Recepção</span><p>Boas-vindas com a marca antes da cerimônia, no padrão do lounge.</p></div>
+        <div><span class="h3">Conteúdo</span><p>Bastidores e entrevistas com os premiados para os canais da CBH e da Inpasa.</p></div>
       </div>
+      <p class="note rv">Sugestões de entregáveis, sujeitas a validação com a CBH.</p>
       </div>
       <figure class="premio-vid rv">
-        <video src="assets/premio.mp4" poster="assets/premio-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Recepção e hospitalidade de convidados na Casa CBH"></video>
-        <figcaption class="cap">Hospitalidade · Casa CBH</figcaption>
+        <video id="premioVid" src="assets/premio.mp4" poster="assets/premio-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Convidados e hospitalidade no Prêmio Hipismo Brasil"></video>
+        <figcaption class="cap">Prêmio Hipismo Brasil · registro real</figcaption>
         <button class="snd" type="button" aria-pressed="false">Ativar som</button>
       </figure>
     </div>
@@ -967,5 +969,6 @@ if("IntersectionObserver" in window){
 const secs=[...document.querySelectorAll("section")];
 addEventListener("keydown",e=>{const fw=["ArrowDown","PageDown"].includes(e.key),bw=["ArrowUp","PageUp"].includes(e.key);if(!fw&&!bw)return;if(document.activeElement.closest&&document.activeElement.closest("[role=tablist],details,video"))return;e.preventDefault();const y=scrollY+4;const t=fw?secs.find(s=>s.offsetTop>y+10):[...secs].reverse().find(s=>s.offsetTop<y-10);if(t)scrollTo({top:t.offsetTop-60,behavior:reduce?"auto":"smooth"})});
 </script>
+<script>(function(){var v=document.getElementById("premioVid");if(!v)return;v.addEventListener("timeupdate",function(){if(v.currentTime>41.6){v.currentTime=0;v.play().catch(function(){})}})})();</script>
 </body>
 </html>
