@@ -325,6 +325,7 @@ section+section{border-top:1px solid var(--line)}
 .plat[aria-selected="true"]{color:var(--ink);padding-left:12px;box-shadow:inset 3px 0 0 var(--accent)}
 .plat.full b::after{content:" 360º";color:var(--accent)}
 .plat:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.plat .mono{white-space:nowrap;flex:none;text-align:right}
 .platcard{background:var(--ink);color:var(--bg);padding:clamp(24px,3.4vw,48px);display:flex;flex-direction:column;gap:20px}
 .platcard .h2{color:var(--bg);font-size:clamp(26px,2.8vw,42px)}
 .platcard p{margin:0;color:#C3CAC7;max-width:46ch}
@@ -984,10 +985,10 @@ const stops = [
 /* Investimento: null aparece como "Sob consulta" */
 const platforms = [
   {name:"Hospitality por etapa", price:"R$ 350 mil", per:"por etapa", idea:"Espaço de relacionamento em uma etapa escolhida pela Inpasa, entre os 6 eventos do calendário de Hospitality.", items:["Espaço com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no espaço","Relatório da etapa"]},
-  {name:"Hospitality todas as etapas", price:"R$ 1,8 milhão", per:"6 etapas", idea:"Espaço de relacionamento nos 6 eventos: 2 em São Paulo, CBS de Escolas em Goiás, CBS de Master em Santa Catarina, Aniversário da SHBr e 1 evento à escolha no Paraná.", items:["6 etapas em 5 estados","Espaço com vista para a pista","Hospitalidade e anfitriões","Experiências proprietárias","Identidade Inpasa no espaço","Relatório por etapa"]},
+  {name:"Hospitality todas as etapas", price:"R$ 1,8 milhão", short:"R$ 1,8 mi", per:"6 etapas", idea:"Espaço de relacionamento nos 6 eventos: 2 em São Paulo, CBS de Escolas em Goiás, CBS de Master em Santa Catarina, Aniversário da SHBr e 1 evento à escolha no Paraná.", items:["6 etapas em 5 estados","Espaço com vista para a pista","Hospitalidade e anfitriões","Experiências proprietárias","Identidade Inpasa no espaço","Relatório por etapa"]},
   {name:"Prêmio Hipismo Brasil", price:"R$ 600 mil", per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
-  {name:"Naming Right Senior Top", price:"R$ 3 milhões", per:"temporada 2027", idea:"A Inpasa dá nome ao circuito nacional de alto rendimento do salto, nas 10 etapas, no ranking e na final.", items:["INPASA Senior Top","Nome nas 10 etapas","Ranking da temporada","Final da temporada","Comunicação oficial CBH","Conteúdo da temporada"]},
-  {name:"Parceria", full:true, price:"R$ 2 milhões", per:"temporada 2027", idea:"Hospitality nas 6 etapas e Prêmio Hipismo Brasil em um único pacote para a temporada.", items:["Hospitality nas 6 etapas","Prêmio Hipismo Brasil","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por etapa"]}
+  {name:"Naming Right Senior Top", price:"R$ 3 milhões", short:"R$ 3 mi", per:"temporada 2027", idea:"A Inpasa dá nome ao circuito nacional de alto rendimento do salto, nas 10 etapas, no ranking e na final.", items:["INPASA Senior Top","Nome nas 10 etapas","Ranking da temporada","Final da temporada","Comunicação oficial CBH","Conteúdo da temporada"]},
+  {name:"Parceria", full:true, price:"R$ 2 milhões", short:"R$ 2 mi", per:"temporada 2027", idea:"Hospitality nas 6 etapas e Prêmio Hipismo Brasil em um único pacote para a temporada.", items:["Hospitality nas 6 etapas","Prêmio Hipismo Brasil","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por etapa"]}
 ];
 
 const delivCols = ["1 etapa","6 etapas","Prêmio","Naming","360º"];
@@ -1025,7 +1026,7 @@ tabs("#modtabs",modalities,(m,i)=>`<button class="modtab" role="tab" aria-select
   $("#modpanel").innerHTML=`<div class="modpanel" role="tabpanel">${m.img?`<figure class="modimg"><img src="${m.img}" alt="${esc(m.alt)}" style="object-position:${m.pos}" loading="lazy"><figcaption class="cap">${m.cap||"Composição conceitual"}</figcaption></figure>`:""}<span class="tag">${esc(m.tag)}</span><p class="big">${esc(m.line)}</p><div class="acts">${m.acts.map(a=>`<div><span class="mono">${esc(a[0])}</span>${esc(a[1])}</div>`).join("")}</div><div class="nmx"><span class="mono">Naming possível</span><b>${esc(m.ex)}</b></div></div>`;
 });
 
-tabs("#platlist",platforms,(p,i)=>`<button class="plat ${p.full?"full":""}" role="tab" aria-selected="false"><b>${esc(p.name)}</b><span class="mono">${p.price||"Sob consulta"}</span></button>`,i=>{
+tabs("#platlist",platforms,(p,i)=>`<button class="plat ${p.full?"full":""}" role="tab" aria-selected="false"><b>${esc(p.name)}</b><span class="mono">${p.short||p.price||"Sob consulta"}</span></button>`,i=>{
   const p=platforms[i];
   $("#platcard").innerHTML=`<div class="platcard" role="tabpanel"><h3 class="h2">${esc(p.name)}${p.full?" 360º":""}</h3><p>${esc(p.idea)}</p><ul>${p.items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="invest"><span class="mono">Investimento</span><b>${p.price||"Sob consulta"}${p.price&&p.per?` <small>${p.per}</small>`:""}</b></div></div>`;
 },platforms.length-1);
