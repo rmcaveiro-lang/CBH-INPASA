@@ -573,12 +573,12 @@ section.dark,section.dark+section{border-top:0}
 /* Player do filme dentro da página */
 .vmodal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(8,12,11,.88);backdrop-filter:blur(6px);padding:24px}
 .vmodal.open{display:flex}
-.vmodal-box{position:relative;width:min(560px,94vw);height:min(86vh,820px);background:#fff;border-radius:6px;overflow:hidden}
+.vmodal-box{position:relative;width:min(560px,94vw);height:min(86vh,480px);background:#fff;border-radius:6px;overflow:hidden}
 .vmodal-box iframe{width:100%;height:100%;border:0;display:block}
 .vmodal-close{position:absolute;top:-44px;right:0;background:none;border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:999px;padding:6px 14px;font:12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .vmodal-ext{position:absolute;bottom:-34px;left:0;color:#C9CECB;font:11px var(--f-mono);letter-spacing:.08em}
 .vmodal-ext a{color:#EBA136}
-@media (max-width:600px){.vmodal{padding:56px 10px 44px}.vmodal-box{height:76vh}}
+@media (max-width:600px){.vmodal{padding:56px 10px 44px}.vmodal-box{height:min(76vh,440px)}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
