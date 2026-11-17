@@ -673,7 +673,7 @@ section.dark,section.dark+section{border-top:0}
         <div><b>Premiação</b><span>Executivo Inpasa na entrega do troféu</span></div>
       </div>
     </div>
-    <figure class="fence rv" style="margin:0"><img class="fimg on" data-k="a" src="assets/historia-salto.jpg" alt="Conjunto saltando obstáculo com montantes personalizados" loading="lazy" style="object-position:50% 30%"><img class="fimg" data-k="b" src="assets/triptico-conteudo.jpg" alt="Conjunto em salto durante prova diurna" loading="lazy" style="object-position:50% 30%"><img class="fimg" data-k="c" src="assets/concurso-chsa.jpg" alt="Conjunto saltando em prova noturna com público na arquibancada" loading="lazy" style="object-position:50% 35%"><figcaption class="cap">Registros reais · marca Inpasa a aplicar</figcaption></figure>
+    <figure class="fence rv" style="margin:0"><img class="fimg on" data-k="a" data-cap="Obstáculo assinatura · conceito ilustrativo" src="assets/obstaculo-inpasa.jpg" alt="Conjunto saltando obstáculo com montantes e varas com a marca Inpasa" loading="lazy" style="object-position:50% 20%"><img class="fimg" data-k="b" data-cap="Placas de pista · conceito ilustrativo" src="assets/placas-inpasa.jpg" alt="Conjunto de adestramento passando diante das placas de pista com a marca Inpasa" loading="lazy" style="object-position:50% 30%"><img class="fimg" data-k="c" data-cap="Backdrop de premiação · conceito ilustrativo" src="assets/backdrop-inpasa.jpg" alt="Cavaleiro premiado com medalha e flores diante do backdrop com as marcas Inpasa e CBH" loading="lazy" style="object-position:50% 20%"><figcaption class="cap" id="fenceCap">Obstáculo assinatura · conceito ilustrativo</figcaption></figure>
   </div>
 </section>
 
@@ -823,7 +823,7 @@ const modalities = [
    ex:"Duas Arenas, Uma Energia"}
 ];
 
-const names = [["Grande Prêmio","INPASA","a"],["Copa INPASA","de Salto","b"],["Troféu INPASA","ao campeão","c"]];
+const names = [["Grande Prêmio","INPASA","a"],["Copa INPASA","de Adestramento","b"],["Troféu INPASA","ao campeão","c"]];
 const casaNames = ['Lounge <b>INPASA</b>','<b>INPASA</b> Conecta','Camarote <b>INPASA</b>'];
 
 /* Circuito Senior Top 2027: etapas por praça (Brasileiro com sede a definir) */
@@ -888,7 +888,7 @@ $("#deliv").innerHTML=`<thead><tr><th></th>${delivCols.map((c,i)=>`<th class="${
 /* rotadores */
 function rotate(el,list,ms,fmt){let i=0;if(reduce)return;setInterval(()=>{el.classList.add("swap");setTimeout(()=>{i=(i+1)%list.length;el.innerHTML=fmt(list[i]);el.classList.remove("swap")},500)},ms)}
 rotate($("#casaRot"),casaNames,3400,x=>x);
-rotate($("#nameRot"),names,3000,([a,b,k])=>{document.querySelectorAll(".fence .fimg").forEach(im=>im.classList.toggle("on",im.dataset.k===k));return `<b>${a}</b> ${b}`});
+rotate($("#nameRot"),names,3600,([a,b,k])=>{document.querySelectorAll(".fence .fimg").forEach(im=>{const on=im.dataset.k===k;im.classList.toggle("on",on);if(on&&im.dataset.cap)$("#fenceCap").textContent=im.dataset.cap});return `<b>${a}</b> ${b}`});
 
 /* mapa */
 (function(){
