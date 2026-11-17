@@ -54,18 +54,18 @@ section+section{border-top:1px solid var(--line)}
 .rv.pre{opacity:0;transform:translateY(22px)}
 
 /* topo */
-.top{position:fixed;inset:0 0 auto 0;z-index:30;padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gut) 14px;display:flex;justify-content:space-between;align-items:center;background:rgba(242,243,241,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{position:fixed;inset:0 0 auto 0;z-index:30;padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gut) 14px;display:flex;justify-content:space-between;align-items:center;background:#0E5241;border-bottom:1px solid rgba(0,0,0,.18)}
 .mark{font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:.1em;font-size:13px;text-decoration:none}
 .mark{display:flex;align-items:center;gap:12px}
 .lg-inpasa{display:flex;align-items:center}
 .lg-inpasa img{height:32px;width:auto;display:block}
 .lg-inpasa .lg-txt{font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:.12em;font-size:15px;color:var(--accent)}
-.lg-x{color:#304F7E;font-size:14px}
+.lg-x{color:rgba(255,255,255,.7);font-size:14px}
 .lg-cbh{height:36px;width:auto;display:block}
 .topnav{display:flex;gap:26px}
-.topnav a{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
-.topnav a:hover,.topnav a.on{color:var(--ink)}
-.bar{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);z-index:31}
+.topnav a{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.72);transition:color .2s}
+.topnav a:hover,.topnav a.on{color:#fff}
+.bar{position:fixed;left:0;top:0;height:2px;width:100%;background:#EBA136;transform-origin:left;transform:scaleX(0);z-index:31}
 @supports (animation-timeline:scroll()){.bar{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{to{transform:scaleX(1)}}}
 @media (max-width:900px){.topnav{display:none}}
 
@@ -500,7 +500,7 @@ section.dark,section.dark+section{border-top:0}
 <body>
 <div class="bar" aria-hidden="true"></div>
 <header class="top">
-  <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo.svg" alt="Inpasa" width="428" height="124"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-verde.png" alt="CBH"></a>
+  <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo-branco.svg" alt="Inpasa" width="428" height="124"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-branco.png" alt="CBH"></a>
   <nav class="topnav" aria-label="Seções">
     <a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#master">Master</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
   </nav>
