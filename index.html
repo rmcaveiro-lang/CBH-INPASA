@@ -623,6 +623,15 @@ section.dark,section.dark+section{border-top:0}
 .hx-body{display:flex;flex-direction:column;justify-content:flex-end;padding:28px 26px 30px}
 .hx-name{font-size:clamp(24px,2.3vw,36px)}
 .hx-tag{align-self:flex-start}
+.hx-photo img{transition:opacity .22s ease}
+.hx-photo img.fade{opacity:0}
+.hx-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);pointer-events:none}
+.hx-photo figcaption{z-index:2;bottom:14px}
+.hx-dots{position:absolute;right:12px;bottom:12px;z-index:2;display:flex;gap:6px}
+.hx-dots button{all:unset;cursor:pointer;width:22px;height:3px;background:rgba(255,255,255,.4);box-shadow:0 0 0 8px transparent}
+.hx-dots button[aria-current="true"]{background:#EBA136}
+.hx-dots button:focus-visible{outline:2px solid #EBA136;outline-offset:3px}
+
 .hx-date{font-size:clamp(26px,2.5vw,40px)}
 @media (max-width:900px){.hx{grid-template-columns:1fr}.hx-detail{position:relative;top:auto;order:-1;grid-template-columns:1fr}.hx-photo{aspect-ratio:4/5;max-height:72svh}}
 @media (max-width:1000px){.hosp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -721,7 +730,7 @@ section.dark,section.dark+section{border-top:0}
       <div class="hx">
         <div class="hx-list" id="hxList" role="tablist" aria-label="Eventos de Hospitality INPASA"></div>
         <article class="hx-detail" id="hxDetail" aria-live="polite">
-          <figure class="hx-photo" id="hxPhoto"><img id="hxImg" alt="" hidden><span class="hx-ph" id="hxPh">Foto do evento em breve</span><figcaption id="hxCap"></figcaption></figure>
+          <figure class="hx-photo" id="hxPhoto"><img id="hxImg" alt="" hidden><span class="hx-ph" id="hxPh">Foto do evento em breve</span><figcaption id="hxCap"></figcaption><div class="hx-dots" id="hxDots"></div></figure>
           <div class="hx-body">
             <span class="mono hx-num" id="hxNum"></span>
             <h3 class="hx-name" id="hxName"></h3>
@@ -953,28 +962,47 @@ const modalities = [
    ex:"Duas Arenas, Uma Energia"}
 ];
 
-/* Hospitality INPASA: eventos. Para incluir a foto, coloque o arquivo em assets/eventos/ e preencha photo. */
+/* Hospitality INPASA: eventos. Fotos verticais (4:5) em assets/eventos/; varias fotos por evento viram galeria. */
 const HOSP = [
-  {name:"São Paulo · Evento 1", place:"São Paulo, SP", date:"A definir", tag:"Hospitality INPASA", photo:null, cap:""},
-  {name:"São Paulo · Evento 2", place:"São Paulo, SP", date:"A definir", tag:"Hospitality INPASA", photo:null, cap:""},
-  {name:"CBS de Escolas", place:"Goiás", date:"A definir", tag:"Campeonato Brasileiro", photo:null, cap:""},
-  {name:"CBS de Master", place:"Santa Catarina", date:"A definir", tag:"Campeonato Brasileiro", photo:null, cap:""},
-  {name:"Aniversário da SHBr", place:"Sociedade Hípica de Brasília, DF", date:"A definir", tag:"Hospitality INPASA", photo:null, cap:""},
-  {name:"CSI-W Curitiba ou Aniversário SHPR", place:"Paraná · 1 evento à escolha da Inpasa", date:"24.04 ou 06.11", tag:"Escolha da Inpasa", photo:null, cap:""}
+  {name:"Indoor · Hípica Paulista", place:"Sociedade Hípica Paulista, São Paulo, SP", date:"A definir", tag:"Hospitality INPASA",
+   photos:["assets/eventos/sp-indoor-1.jpg","assets/eventos/sp-indoor-2.jpg","assets/eventos/sp-indoor-3.jpg","assets/eventos/sp-indoor-4.jpg"], cap:"36º JHSF Indoor · registro real"},
+  {name:"Brasileiro de Amazonas", place:"Clube Hípico de Santo Amaro, São Paulo, SP", date:"A definir", tag:"Hospitality INPASA",
+   photos:["assets/eventos/sp-amazonas-1.jpg","assets/eventos/sp-amazonas-2.jpg","assets/eventos/sp-amazonas-3.jpg"], cap:"Brasileiro de Amazonas 2026 · registro real"},
+  {name:"CBS de Escolas", place:"Goiás", date:"A definir", tag:"Campeonato Brasileiro", photos:[], cap:""},
+  {name:"CBS de Master", place:"Santa Catarina", date:"A definir", tag:"Campeonato Brasileiro", photos:[], cap:""},
+  {name:"Aniversário da SHBr", place:"Sociedade Hípica de Brasília, DF", date:"A definir", tag:"Hospitality INPASA", photos:[], cap:""},
+  {name:"CSI-W Curitiba ou Aniversário SHPR", place:"Paraná · 1 evento à escolha da Inpasa", date:"24.04 ou 06.11", tag:"Escolha da Inpasa", photos:[], cap:""}
 ];
 (function(){
   const list=document.getElementById("hxList"); if(!list) return;
   const el=id=>document.getElementById(id);
+  const img=el("hxImg"), dots=el("hxDots"), fig=el("hxPhoto");
+  const still=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let cur=-1, k=0, timer=null, paused=false;
   list.innerHTML=HOSP.map((e,i)=>`<button class="hx-item" role="tab" type="button" data-i="${i}" aria-selected="${i===0}"><span class="hx-d">${String(i+1).padStart(2,"0")}</span><span class="hx-t"><b>${e.name}</b><small>${e.place}</small></span><span class="hx-arrow" aria-hidden="true">→</span></button>`).join("");
+  function photo(j){
+    const ph=HOSP[cur].photos; k=(j+ph.length)%ph.length;
+    img.classList.add("fade");
+    const src=ph[k];
+    setTimeout(()=>{img.src=src;img.onload=()=>img.classList.remove("fade");if(img.complete)img.classList.remove("fade")},img.hidden?0:220);
+    img.alt="Registro do evento "+HOSP[cur].name+" ("+(k+1)+" de "+ph.length+")";
+    dots.querySelectorAll("button").forEach((d,n)=>d.setAttribute("aria-current",String(n===k)));
+  }
+  function loop(){clearInterval(timer);const ph=HOSP[cur].photos;if(ph.length>1&&!still)timer=setInterval(()=>{if(!paused)photo(k+1)},4500)}
   function show(i){
-    const e=HOSP[i];
+    if(i===cur) return; cur=i; const e=HOSP[i];
     list.querySelectorAll(".hx-item").forEach(b=>b.setAttribute("aria-selected",String(+b.dataset.i===i)));
     el("hxNum").textContent="EVENTO "+String(i+1).padStart(2,"0");
     el("hxName").textContent=e.name; el("hxDate").textContent=e.date; el("hxPlace").textContent=e.place; el("hxTag").textContent=e.tag;
-    const img=el("hxImg");
-    if(e.photo){img.src=e.photo;img.alt="Registro do evento "+e.name;img.hidden=false;el("hxPh").hidden=true}else{img.hidden=true;img.removeAttribute("src");el("hxPh").hidden=false}
+    const ph=e.photos||[];
+    dots.innerHTML=ph.length>1?ph.map((_,n)=>`<button type="button" aria-label="Foto ${n+1} de ${ph.length}"></button>`).join(""):"";
+    if(ph.length){ph.forEach(s=>{const p=new Image();p.src=s});el("hxPh").hidden=true;photo(0);img.hidden=false}
+    else{img.hidden=true;img.removeAttribute("src");el("hxPh").hidden=false}
     el("hxCap").textContent=e.cap||"";
+    loop();
   }
+  dots.addEventListener("click",ev=>{const d=ev.target.closest("button");if(!d)return;photo([...dots.children].indexOf(d));loop()});
+  fig.addEventListener("mouseenter",()=>paused=true); fig.addEventListener("mouseleave",()=>paused=false);
   list.addEventListener("click",ev=>{const b=ev.target.closest(".hx-item");if(!b)return;show(+b.dataset.i);if(window.innerWidth<=900)el("hxDetail").scrollIntoView({behavior:"smooth",block:"start"})});
   list.addEventListener("mouseover",ev=>{const b=ev.target.closest(".hx-item");if(b&&window.matchMedia("(hover:hover)").matches)show(+b.dataset.i)});
   list.addEventListener("keydown",ev=>{const b=ev.target.closest(".hx-item");if(!b)return;let i=+b.dataset.i;if(ev.key==="ArrowDown"||ev.key==="ArrowRight")i=Math.min(HOSP.length-1,i+1);else if(ev.key==="ArrowUp"||ev.key==="ArrowLeft")i=Math.max(0,i-1);else return;ev.preventDefault();show(i);list.children[i].focus()});
