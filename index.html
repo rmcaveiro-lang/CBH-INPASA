@@ -500,6 +500,31 @@ section.dark,section.dark+section{border-top:0}
 @media (max-width:900px){.namegrid{grid-template-columns:1fr}}
 .namegrid .fence{aspect-ratio:auto;height:100%;min-height:420px}
 @media (max-width:900px){.namegrid .fence{aspect-ratio:3/2;height:auto;min-height:0}}
+
+/* Vídeos: trilho horizontal que navega com o mouse */
+.reels{margin-top:clamp(48px,6vw,80px)}
+.reels-head{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px;color:var(--accent-lt)}
+.reels-hint{color:#8F9894}
+.reel-track{overflow:hidden;cursor:ew-resize}
+.reel-row{display:flex;gap:14px;width:max-content;will-change:transform;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.reel{position:relative;flex:0 0 clamp(200px,19vw,270px);aspect-ratio:9/16;overflow:hidden;border-radius:4px;background:#1d2a26;color:#F2F3F1;text-decoration:none;isolation:isolate}
+.reel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,12,11,.25) 60%,rgba(8,12,11,.92) 100%);z-index:1}
+.reel:hover img{transform:scale(1.045)}
+.reel-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:60px;height:60px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(12,20,18,.5);backdrop-filter:blur(6px);display:grid;place-items:center;transition:transform .2s,background .2s}
+.reel-play svg{width:24px;height:24px;margin-left:3px}
+.reel:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);background:rgba(14,82,65,.85)}
+.reel-cap{position:absolute;left:14px;right:14px;bottom:16px;z-index:2;display:flex;flex-direction:column;gap:6px;font-size:11px;color:#EBA136}
+.reel-cap b{display:flex;justify-content:space-between;color:#F2F3F1;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.reel-cap i{font-style:normal}
+.reel:focus-visible{outline:3px solid #EBA136;outline-offset:3px}
+@media (hover:none),(max-width:900px){
+  .reel-track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;cursor:auto;padding-bottom:8px}
+  .reel-row{transform:none!important}
+  .reel{scroll-snap-align:start;flex-basis:62vw;max-width:260px}
+  .reels-hint{display:none}
+}
+@media print{.reel-track{overflow:visible}.reel-row{flex-wrap:wrap;width:auto;transform:none!important}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -726,6 +751,11 @@ section.dark,section.dark+section{border-top:0}
         <span class="ph-screen"><img class="ph-shot" src="assets/instagram-cbh.jpg" alt="Perfil @cbhoficial no Instagram com 60,1 mil seguidores" loading="lazy"></span>
       </a>
     </div>
+    <div class="reels rv">
+      <div class="reels-head"><span class="mono">Vídeos da CBH no Instagram</span><span class="mono reels-hint" aria-hidden="true">Passe o mouse para navegar</span></div>
+      <div class="reel-track" id="reelTrack" aria-label="Vídeos da CBH no Instagram"><div class="reel-row"><a class="reel" href="https://www.instagram.com/reel/Dby0RJCNaFl/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 01 da CBH no Instagram"><img src="assets/reel-01.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a><a class="reel" href="https://www.instagram.com/reel/DbtSojzNOKt/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 02 da CBH no Instagram"><img src="assets/reel-02.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a><a class="reel" href="https://www.instagram.com/reel/DZ0z2wuNphG/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 03 da CBH no Instagram"><img src="assets/reel-03.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a><a class="reel" href="https://www.instagram.com/reel/DZvHKZaNPQv/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 04 da CBH no Instagram"><img src="assets/reel-04.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a><a class="reel" href="https://www.instagram.com/reel/DZSI5n6tvV1/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 05 da CBH no Instagram"><img src="assets/reel-05.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a><a class="reel" href="https://www.instagram.com/reel/DZQL_EwNOdh/" target="_blank" rel="noopener" aria-label="Assistir ao Reel 06 da CBH no Instagram"><img src="assets/reel-06.jpg" alt="" loading="lazy"><span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><span class="reel-cap"><span>@cbhoficial</span><b>Reel <i aria-hidden="true">↗</i></b></span></a></div></div>
+      <p class="note">Cada vídeo abre no Instagram da CBH. Formato de conteúdo que pode acompanhar a temporada da Inpasa.</p>
+    </div>
   </div>
 </section>
 
@@ -947,5 +977,12 @@ const secs=[...document.querySelectorAll("section")];
 addEventListener("keydown",e=>{const fw=["ArrowDown","PageDown"].includes(e.key),bw=["ArrowUp","PageUp"].includes(e.key);if(!fw&&!bw)return;if(document.activeElement.closest&&document.activeElement.closest("[role=tablist],details,video"))return;e.preventDefault();const y=scrollY+4;const t=fw?secs.find(s=>s.offsetTop>y+10):[...secs].reverse().find(s=>s.offsetTop<y-10);if(t)scrollTo({top:t.offsetTop-60,behavior:reduce?"auto":"smooth"})});
 </script>
 <script>(function(){var v=document.getElementById("premioVid");if(!v)return;v.addEventListener("timeupdate",function(){if(v.currentTime>41.6){v.currentTime=0;v.play().catch(function(){})}})})();</script>
+<script>(function(){var t=document.getElementById("reelTrack");if(!t)return;var r=t.querySelector(".reel-row");
+var fine=window.matchMedia("(hover:hover) and (min-width:901px)");
+function move(e){if(!fine.matches)return;var b=t.getBoundingClientRect();var max=r.scrollWidth-t.clientWidth;if(max<=0){r.style.transform="";return}
+var x=Math.min(1,Math.max(0,(e.clientX-b.left-b.width*.12)/(b.width*.76)));r.style.transform="translateX("+(-x*max)+"px)"}
+t.addEventListener("mousemove",move);
+t.addEventListener("focusin",function(e){if(!fine.matches)return;var a=e.target.closest(".reel");if(!a)return;var max=r.scrollWidth-t.clientWidth;var off=Math.min(max,Math.max(0,a.offsetLeft-t.clientWidth/2+a.offsetWidth/2));r.style.transform="translateX("+(-off)+"px)"});
+})();</script>
 </body>
 </html>
