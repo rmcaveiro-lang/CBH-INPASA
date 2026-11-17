@@ -616,7 +616,15 @@ section.dark,section.dark+section{border-top:0}
 .hx-date{font-weight:300;font-size:clamp(30px,3.2vw,48px);line-height:1;color:#EBA136;font-variant-numeric:tabular-nums}
 .hx-place{margin:12px 0 18px;color:#D9DDDB;font-size:15px}
 .hx-tag{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#D9DDDB;border:1px solid rgba(255,255,255,.3);padding:6px 10px}
-@media (max-width:900px){.hx{grid-template-columns:1fr}.hx-detail{position:relative;top:auto;order:-1}}
+/* Foto vertical: quadro com foto 4:5 à esquerda e informações à direita */
+.hx{grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr)}
+.hx-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.hx-photo{aspect-ratio:4/5}
+.hx-body{display:flex;flex-direction:column;justify-content:flex-end;padding:28px 26px 30px}
+.hx-name{font-size:clamp(24px,2.3vw,36px)}
+.hx-tag{align-self:flex-start}
+.hx-date{font-size:clamp(26px,2.5vw,40px)}
+@media (max-width:900px){.hx{grid-template-columns:1fr}.hx-detail{position:relative;top:auto;order:-1;grid-template-columns:1fr}.hx-photo{aspect-ratio:4/5;max-height:72svh}}
 @media (max-width:1000px){.hosp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.hosp-grid{grid-template-columns:1fr}}
 
