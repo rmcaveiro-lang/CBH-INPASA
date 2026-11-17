@@ -540,6 +540,25 @@ section.dark,section.dark+section{border-top:0}
   .respiro.right .wrap{height:auto;align-items:flex-start;text-align:left;padding-top:8px;padding-bottom:48px}
   .respiro.right .spots{justify-content:flex-start}
 }
+
+/* Case CAIXA: respiro de vídeo entre Senior Top e telas */
+.case-caixa{padding:0;background:#0f1412;color:#F2F3F1;border:0}
+.cx-film{position:relative;display:block;height:min(calc(100vw / 2.3),66svh);overflow:hidden;color:#F2F3F1}
+.cx-film img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.cx-film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,18,.25) 0%,rgba(15,20,18,0) 30%,rgba(15,20,18,0) 70%,#0f1412 100%)}
+.cx-film:hover img{transform:scale(1.03)}
+.cx-play{position:absolute;left:24%;top:40%;z-index:2;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;border:1px solid rgba(255,255,255,.75);background:rgba(12,20,18,.45);backdrop-filter:blur(6px);display:grid;place-items:center;transition:transform .25s,background .25s}
+.cx-play svg{width:32px;height:32px;margin-left:4px}
+.cx-film:hover .cx-play{transform:translate(-50%,-50%) scale(1.08);background:rgba(14,82,65,.85)}
+.cx-film:focus-visible{outline:3px solid #EBA136;outline-offset:-6px}
+.cx-film .cap{position:absolute;top:16px;left:var(--gut);bottom:auto;right:auto;z-index:2}
+.cx-copy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:end;padding-top:clamp(20px,2.5vw,36px);padding-bottom:clamp(56px,7vw,100px)}
+.case-caixa .h2{color:#F2F3F1;margin-top:14px}
+.case-caixa .body{color:#C9CECB}
+.case-caixa .tag{color:#9DBBE6}
+.cx-link{display:inline-flex;gap:8px;margin-top:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#F2F3F1;text-decoration:none;border-bottom:1px solid #EBA136;padding-bottom:4px}
+.cx-link:hover{color:#EBA136}
+@media (max-width:900px){.cx-film{height:56vw}.cx-copy{grid-template-columns:1fr}.cx-play{width:64px;height:64px}}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -717,6 +736,25 @@ section.dark,section.dark+section{border-top:0}
       <div class="rv"><span class="h3">Final e TOP TEN</span><p>Campeão do ranking premiado com a Inpasa no centro da cerimônia.</p></div>
     </div>
     <p class="note">Calendário proposto para 2027: SHP Open, CSI-W Curitiba, Copa JK, Copa São Paulo, Campeonato Brasileiro (sede a definir), Aniversário CHSA, Copa Village Mall, Agromen, Aniversário SHPR e CSI-W Rio de Janeiro (final). Datas sujeitas à confirmação. Nome do circuito sujeito a aprovação.</p>
+  </div>
+</section>
+
+<!-- CASE CAIXA -->
+<section class="case-caixa" id="caixa" aria-label="Filme para a CAIXA">
+  <a class="cx-film" href="https://www.instagram.com/reel/DYs5kORtxMZ/" target="_blank" rel="noopener" aria-label="Assistir ao filme da CAIXA no Instagram da CBH">
+    <img src="assets/caixa-cover.jpg" alt="Placa da CAIXA na pista vista entre as varas de um obstáculo" loading="lazy">
+    <span class="cx-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+    <span class="cap">CAIXA × CBH · registro real</span>
+  </a>
+  <div class="wrap cx-copy">
+    <div>
+      <span class="tag">Conteúdo para marcas</span>
+      <h2 class="h2">Da pista para a campanha.</h2>
+    </div>
+    <div class="cx-r">
+      <p class="body">Filme da CAIXA, patrocinadora oficial da CBH, gravado em pista e publicado nos canais oficiais da Confederação. O mesmo padrão de produção pode contar a temporada da Inpasa no hipismo.</p>
+      <a class="cx-link" href="https://www.instagram.com/reel/DYs5kORtxMZ/" target="_blank" rel="noopener">Assistir no Instagram <i aria-hidden="true">↗</i></a>
+    </div>
   </div>
 </section>
 
