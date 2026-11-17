@@ -508,7 +508,7 @@ section.dark,section.dark+section{border-top:0}
 <header class="top">
   <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo-branco.svg" alt="Inpasa" width="428" height="124"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-branco.png" alt="CBH"></a>
   <nav class="topnav" aria-label="Seções">
-    <a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#master">Master</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
+    <a href="#premio">Prêmio Hipismo Brasil</a><a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#master">Master</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
   </nav>
 </header>
 
@@ -588,7 +588,7 @@ section.dark,section.dark+section{border-top:0}
       <div><span class="h3">Mesa de negócios</span><p>Um espaço reservado para as conversas que precisam acontecer.</p></div>
       <div><span class="h3">Experiências exclusivas</span><p>Reconhecimento de pista, bastidores e encontro com atletas.</p></div>
     </div>
-    <div class="premio">
+    <div class="premio" id="premio" data-sec style="scroll-margin-top:90px">
       <div class="premio-text">
       <div class="stack rv">
         <span class="tag">Prêmio Hipismo Brasil</span>
@@ -923,7 +923,7 @@ if("IntersectionObserver" in window){
   const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}}),{threshold:.6});document.querySelectorAll("[data-count]").forEach(el=>cio.observe(el));
   const links=[...document.querySelectorAll(".topnav a")];
   const nio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
-  document.querySelectorAll("section[data-sec]").forEach(s=>nio.observe(s));
+  document.querySelectorAll("section[data-sec],#premio").forEach(s=>nio.observe(s));
 }
 
 
