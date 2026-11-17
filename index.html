@@ -678,32 +678,6 @@ section.dark,section.dark+section{border-top:0}
   <span class="cap">Equipe brasileira · composição conceitual</span>
 </section>
 
-<!-- 07 DO LOUNGE AO COMERCIAL -->
-<section id="jornada" data-sec>
-  <div class="wrap">
-    <div class="sechead rv"><span>Como o relacionamento vira negócio</span></div>
-    <div class="cxc-grid">
-      <div class="stack rv">
-        <h2 class="h2">Do lounge ao comercial.</h2>
-        <p class="body">O lounge não termina com o fim do evento. Cada convidado chega com um motivo e sai com um próximo passo, acompanhado pelo time comercial da Inpasa.</p>
-        <p class="body">A Inpasa escolhe quem quer receber. A CBH e a produção cuidam do convite, da agenda e da experiência.</p>
-      </div>
-      <div class="board rv" aria-label="Jornada do convidado">
-        <div class="board-head"><span class="mono" style="color:var(--accent-lt)">INPASA · Jornada do convidado</span><span class="mono">Por etapa</span></div>
-        <div class="lane"><div><b>Antes</b><span class="mono">Convite com anfitrião</span></div><div class="track"><i style="width:33%"></i></div><div class="clock">D-30</div></div>
-        <div class="lane"><div><b>Durante</b><span class="mono">Lounge, pista e conversa</span></div><div class="track"><i style="width:66%"></i></div><div class="clock">GP</div></div>
-        <div class="lane total"><div><b>Depois</b><span class="mono">Próximo passo no comercial</span></div><div class="track"><i style="width:100%"></i></div><div class="clock">D+5</div></div>
-      </div>
-    </div>
-    <div class="steps3">
-      <div class="rv"><span class="h3">Contas certas</span><p>A Inpasa define as contas prioritárias e o anfitrião de cada convidado.</p></div>
-      <div class="rv"><span class="h3">Experiência memorável</span><p>Hospitalidade, pista e uma experiência proprietária em cada etapa.</p></div>
-      <div class="rv"><span class="h3">Resultado acompanhado</span><p>Relatório por etapa e revisão trimestral junto ao comercial.</p></div>
-    </div>
-    <p class="safety rv">Experiências acontecem em janelas autorizadas pela organização, sem interferir nas áreas técnicas e no bem-estar dos animais. Dados dos convidados são usados apenas com autorização.</p>
-  </div>
-</section>
-
 <!-- 09 CIRCUITO SENIOR TOP -->
 <section id="brasil" data-sec>
   <div class="wrap">
@@ -741,12 +715,6 @@ section.dark,section.dark+section{border-top:0}
       <div class="rv"><span class="h3">Convidados de outras praças</span><p>Clientes de MT, MS, GO, BA e MA convidados para as etapas.</p></div>
       <div class="rv"><span class="h3">Conteúdo da temporada</span><p>Série acompanhando atletas, convidados e histórias do campo.</p></div>
       <div class="rv"><span class="h3">Final e TOP TEN</span><p>Campeão do ranking premiado com a Inpasa no centro da cerimônia.</p></div>
-    </div>
-    <div class="flowrow rv">
-      <div><b>Evento CBH</b><p>Público qualificado por vários dias.</p></div>
-      <div><b>Lounge INPASA</b><p>Hospitalidade, pista e experiência.</p></div>
-      <div><b>Comercial INPASA</b><p>Anfitrião regional, registra o próximo passo.</p></div>
-      <div><b>Negócio</b><p>Cliente, parceiro ou fornecedor acompanhado.</p></div>
     </div>
     <p class="note">Calendário proposto para 2027: SHP Open, CSI-W Curitiba, Copa JK, Copa São Paulo, Campeonato Brasileiro (sede a definir), Aniversário CHSA, Copa Village Mall, Agromen, Aniversário SHPR e CSI-W Rio de Janeiro (final). Datas sujeitas à confirmação. Nome do circuito sujeito a aprovação.</p>
   </div>
@@ -842,7 +810,7 @@ const pairs = [["Haras","Campo"],["Treino","Safra"],["Energia","Etanol"],["Nutri
 /* Experiências proprietárias no lounge */
 const modalities = [
   {name:"Conecta", tag:"Relacionamento", line:"Uma agenda de convidados com propósito: cada conta tem anfitrião, interesse declarado e, se quiser, uma conversa de 20 minutos.",
-   acts:[["Antes","Convite 30 dias antes, com anfitrião definido"],["Durante","Mesa reservada para conversas de negócio"],["Depois","Próximo passo registrado pelo comercial em até 5 dias úteis"]],
+   acts:[["Antes","Convite 30 dias antes, com anfitrião definido"],["Durante","Mesa reservada para conversas de negócio"],["Experiência","Reconhecimento de pista ou bastidores com o convidado"]],
    ex:"INPASA Conecta"},
   {name:"FortiPro Lab", tag:"Nutrição", line:"Uma estação técnica para quem formula, recomenda e compra na cadeia de nutrição animal.",
    acts:[["Sessão","20 minutos com especialista Inpasa"],["Mesa","Do grão à formulação, em formato interativo"],["Negócio","Consultas com fabricantes e gestores de haras"]],
@@ -870,7 +838,7 @@ const platforms = [
   {name:"Lounge por evento", price:null, per:"por evento", idea:"Lounge de relacionamento em um evento selecionado, com hospitalidade, experiência e convidados da Inpasa.", items:["Lounge com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no lounge","Relatório da etapa"]},
   {name:"Prêmio Hipismo Brasil", price:null, per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
   {name:"Circuito Senior Top", price:null, per:"", idea:"O lounge acompanha as 10 etapas do circuito em quatro estados, com naming da temporada e anfitrião comercial em cada praça.", items:["Naming do circuito","Lounge nas 10 etapas","Anfitrião comercial regional","Experiências proprietárias","Final e TOP TEN","Ranking e conteúdo"]},
-  {name:"Parceria", full:true, price:null, per:"", idea:"Circuito Senior Top e Prêmio Hipismo Brasil, com o lounge como plataforma da temporada inteira.", items:["Circuito Senior Top","Prêmio Hipismo Brasil","Lounge em todas as etapas","Experiências proprietárias","Conteúdo, PR e digital","Revisão trimestral de resultados"]}
+  {name:"Parceria", full:true, price:null, per:"", idea:"Circuito Senior Top e Prêmio Hipismo Brasil, com o lounge como plataforma da temporada inteira.", items:["Circuito Senior Top","Prêmio Hipismo Brasil","Lounge em todas as etapas","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por etapa"]}
 ];
 
 const delivCols = ["Lounge","Prêmio","Senior Top","360º"];
@@ -878,7 +846,7 @@ const deliv = [
   ["Lounge de relacionamento",2,0,2,2],["Hospitalidade e anfitriões",2,2,2,2],["Experiência proprietária",1,0,2,2],
   ["Naming do circuito",0,0,2,2],["Todas as etapas do circuito",0,0,2,2],["Final e TOP TEN",0,0,2,2],
   ["Categoria INPASA no Prêmio",0,2,0,2],["Mesa INPASA na cerimônia",0,2,0,2],
-  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório por etapa",2,1,2,2],["Revisão trimestral",0,0,2,2]
+  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório por etapa",2,1,2,2]
 ];
 
 /* ===================================================================== */
