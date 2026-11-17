@@ -525,6 +525,21 @@ section.dark,section.dark+section{border-top:0}
   .reels-hint{display:none}
 }
 @media print{.reel-track{overflow:visible}.reel-row{flex-wrap:wrap;width:auto;transform:none!important}}
+
+/* Respiro com texto à direita: o conjunto fica livre à esquerda */
+.respiro.right::after{background:linear-gradient(270deg,rgba(18,23,22,.86) 0%,rgba(18,23,22,.55) 34%,rgba(18,23,22,0) 58%)}
+.respiro.right .wrap{align-items:flex-end;text-align:right}
+.respiro.right .h2{max-width:13ch}
+.respiro.right .spots{justify-content:flex-end;max-width:520px}
+.respiro.right .cap{left:var(--gut);right:auto}
+.respiro.right .cap{top:16px;bottom:auto}
+@media (max-width:900px){
+  .respiro.right{height:auto;background:#121716}
+  .respiro.right img{position:relative;height:52svh;object-position:44% 40%!important}
+  .respiro.right::after{inset:0 0 auto 0;height:52svh;background:linear-gradient(180deg,rgba(18,23,22,0) 70%,#121716 100%)}
+  .respiro.right .wrap{height:auto;align-items:flex-start;text-align:left;padding-top:8px;padding-bottom:48px}
+  .respiro.right .spots{justify-content:flex-start}
+}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -654,13 +669,13 @@ section.dark,section.dark+section{border-top:0}
 </section>
 
 <!-- 06 RESPIRO -->
-<section class="respiro" aria-label="O esporte é o palco">
-  <img src="assets/concurso-shbr.jpg" alt="Conjunto saltando em pista cercada por público na arquibancada" loading="lazy" style="object-position:50% 52%">
+<section class="respiro right" aria-label="O esporte é o palco">
+  <img src="assets/respiro-salto.jpg" alt="Cavaleiro da equipe brasileira saltando obstáculo diante de arquibancada lotada" loading="lazy" style="object-position:50% 40%">
   <div class="wrap">
     <h2 class="h2">O esporte é o palco. O convidado é o centro.</h2>
     <div class="spots"><span>Recepção</span><span>Lounge com vista</span><span>Mesa de negócios</span><span>Reconhecimento de pista</span><span>Bastidores</span><span>Grande Prêmio</span><span>Pódio</span></div>
   </div>
-  <span class="cap">Sociedade Hípica de Brasília · registro real</span>
+  <span class="cap">Equipe brasileira · composição conceitual</span>
 </section>
 
 <!-- 07 DO LOUNGE AO COMERCIAL -->
