@@ -868,7 +868,7 @@ section.dark,section.dark+section{border-top:0}
   <div class="wrap">
     <div class="stack rv">
       <h2 class="h2">Formatos, não cotas.</h2>
-      <p class="body">Quatro formatos. A Inpasa pode começar por um evento e crescer até a temporada completa. Ativações dentro de cada evento dependem dos acordos de cada comitê organizador.</p>
+      <p class="body">Cinco formatos. A Inpasa pode começar por uma etapa e crescer até a temporada completa. Ativações dentro de cada evento dependem dos acordos de cada comitê organizador.</p>
     </div>
     <div class="plats">
       <div class="platlist rv" role="tablist" id="platlist" aria-label="Formatos"></div>
@@ -983,18 +983,19 @@ const stops = [
 
 /* Investimento: null aparece como "Sob consulta" */
 const platforms = [
-  {name:"Hospitality INPASA", price:"R$ 250 mil", per:"por evento", idea:"Espaço de relacionamento em até 6 eventos: 2 em São Paulo, CBS de Escolas em Goiás, CBS de Master em Santa Catarina, Aniversário da SHBr e 1 evento à escolha no Paraná.", items:["Espaço com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no espaço","Relatório por evento"]},
-  {name:"Prêmio Hipismo Brasil", price:"R$ 200 mil", per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
-  {name:"Naming Senior Top", price:"R$ 800 mil", per:"temporada 2027", idea:"A Inpasa dá nome ao circuito nacional de alto rendimento do salto, nas 10 etapas, no ranking e na final.", items:["INPASA Senior Top","Nome nas 10 etapas","Ranking da temporada","Final da temporada","Comunicação oficial CBH","Conteúdo da temporada"]},
-  {name:"Parceria", full:true, price:"R$ 2 milhões", per:"temporada 2027", idea:"Hospitality nos 6 eventos, Prêmio Hipismo Brasil e Naming Senior Top em um único pacote para a temporada.", items:["Hospitality nos 6 eventos","Prêmio Hipismo Brasil","Naming Senior Top","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por evento"]}
+  {name:"Hospitality por etapa", price:"R$ 350 mil", per:"por etapa", idea:"Espaço de relacionamento em uma etapa escolhida pela Inpasa, entre os 6 eventos do calendário de Hospitality.", items:["Espaço com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no espaço","Relatório da etapa"]},
+  {name:"Hospitality todas as etapas", price:"R$ 1,8 milhão", per:"6 etapas", idea:"Espaço de relacionamento nos 6 eventos: 2 em São Paulo, CBS de Escolas em Goiás, CBS de Master em Santa Catarina, Aniversário da SHBr e 1 evento à escolha no Paraná.", items:["6 etapas em 5 estados","Espaço com vista para a pista","Hospitalidade e anfitriões","Experiências proprietárias","Identidade Inpasa no espaço","Relatório por etapa"]},
+  {name:"Prêmio Hipismo Brasil", price:"R$ 600 mil", per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
+  {name:"Naming Right Senior Top", price:"R$ 3 milhões", per:"temporada 2027", idea:"A Inpasa dá nome ao circuito nacional de alto rendimento do salto, nas 10 etapas, no ranking e na final.", items:["INPASA Senior Top","Nome nas 10 etapas","Ranking da temporada","Final da temporada","Comunicação oficial CBH","Conteúdo da temporada"]},
+  {name:"Parceria", full:true, price:"R$ 2 milhões", per:"temporada 2027", idea:"Hospitality nas 6 etapas e Prêmio Hipismo Brasil em um único pacote para a temporada.", items:["Hospitality nas 6 etapas","Prêmio Hipismo Brasil","Experiências proprietárias","Conteúdo, PR e digital","Relatório de entregas por etapa"]}
 ];
 
-const delivCols = ["Hospitality","Prêmio","Naming","360º"];
+const delivCols = ["1 etapa","6 etapas","Prêmio","Naming","360º"];
 const deliv = [
-  ["Espaço Hospitality INPASA",2,0,0,2],["6 eventos em 5 estados",2,0,0,2],["Experiência proprietária",1,0,0,2],
-  ["Categoria INPASA no Prêmio",0,2,0,2],["Mesa INPASA na cerimônia",0,2,0,2],
-  ["Naming do circuito",0,0,2,2],["Nome nas 10 etapas",0,0,2,2],["Final da temporada",0,0,2,2],
-  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório de entregas",2,1,2,2]
+  ["Espaço Hospitality INPASA",2,2,0,0,2],["Todas as 6 etapas",0,2,0,0,2],["Experiência proprietária",1,2,0,0,2],
+  ["Categoria INPASA no Prêmio",0,0,2,0,2],["Mesa INPASA na cerimônia",0,0,2,0,2],
+  ["Naming do circuito",0,0,0,2,0],["Nome nas 10 etapas",0,0,0,2,0],["Final da temporada",0,0,0,2,0],
+  ["Conteúdo proprietário",1,1,2,2,2],["Redes e site CBH",2,2,2,2,2],["Relatório de entregas",2,2,1,2,2]
 ];
 
 /* ===================================================================== */
@@ -1030,7 +1031,7 @@ tabs("#platlist",platforms,(p,i)=>`<button class="plat ${p.full?"full":""}" role
 },platforms.length-1);
 
 const sym=v=>v===2?'<i class="dot" aria-label="Incluso"></i>':v===1?'<i class="ring" aria-label="Opcional"></i>':'<i class="dash" aria-label="Não se aplica"></i>';
-$("#deliv").innerHTML=`<thead><tr><th></th>${delivCols.map((c,i)=>`<th class="${i===3?"hl":""}">${c}</th>`).join("")}</tr></thead><tbody>${deliv.map(r=>`<tr><td>${esc(r[0])}</td>${r.slice(1).map((v,i)=>`<td class="${i===3?"hl":""}">${sym(v)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+$("#deliv").innerHTML=`<thead><tr><th></th>${delivCols.map((c,i)=>`<th class="${i===4?"hl":""}">${c}</th>`).join("")}</tr></thead><tbody>${deliv.map(r=>`<tr><td>${esc(r[0])}</td>${r.slice(1).map((v,i)=>`<td class="${i===4?"hl":""}">${sym(v)}</td>`).join("")}</tr>`).join("")}</tbody>`;
 
 /* rotadores */
 function rotate(el,list,ms,fmt){let i=0;if(reduce)return;setInterval(()=>{el.classList.add("swap");setTimeout(()=>{i=(i+1)%list.length;el.innerHTML=fmt(list[i]);el.classList.remove("swap")},500)},ms)}
