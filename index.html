@@ -581,6 +581,8 @@ section.dark,section.dark+section{border-top:0}
 .vmodal-ext{position:absolute;bottom:-34px;left:0;color:#C9CECB;font:11px var(--f-mono);letter-spacing:.08em}
 .vmodal-ext a{color:#EBA136}
 @media (max-width:600px){.vmodal{padding:56px 10px 44px}.vmodal-box{height:min(76vh,440px)}}
+
+.cv-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
 </style>
 <script>function fallbackLogo(img){var s=document.createElement("span");s.className="lg-txt";s.textContent="INPASA";s.setAttribute("aria-label","Inpasa");img.replaceWith(s)}</script>
 </head>
@@ -595,7 +597,7 @@ section.dark,section.dark+section{border-top:0}
 
 <!-- 01 CAPA -->
 <section class="hero cover" id="capa" data-sec>
-  <div class="cv-bg"><img src="assets/hero-inpasa.jpg" alt="Conjunto saltando obstáculo de frente, diante da faixa de LED com a marca Inpasa e da arquibancada lotada" fetchpriority="high"></div>
+  <div class="cv-bg"><video id="heroVid" src="assets/hero-indoor.mp4" poster="assets/hero-indoor-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Filme do 36º JHSF Indoor: Grande Prêmio, pódio e público na arena"></video></div>
   <div class="wrap cv-copy">
     <div class="cv-l">
       <span class="tag">Proposta CBH · Temporada 2027</span>
@@ -607,7 +609,7 @@ section.dark,section.dark+section{border-top:0}
       <div><a class="btn" href="#plataformas">Ver formatos <i></i></a></div>
     </div>
   </div>
-  <span class="cap">Composição conceitual</span>
+  <span class="cap">36º JHSF Indoor · registro real</span>
 </section>
 <div class="cv-stats">
   <div class="wrap">
