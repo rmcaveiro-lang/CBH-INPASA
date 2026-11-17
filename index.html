@@ -508,7 +508,7 @@ section.dark,section.dark+section{border-top:0}
 <header class="top">
   <a class="mark" href="#capa" aria-label="INPASA × CBH"><span class="lg-inpasa"><img src="assets/inpasa-logo-branco.svg" alt="Inpasa" width="428" height="124"></span><span class="lg-x" aria-hidden="true">×</span><img class="lg-cbh" src="assets/cbh-logo-branco.png" alt="CBH"></a>
   <nav class="topnav" aria-label="Seções">
-    <a href="#premio">Prêmio Hipismo Brasil</a><a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#master">Master</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
+    <a href="#premio">Prêmio Hipismo Brasil</a><a href="#lounge">Lounge</a><a href="#experiencias">Experiências</a><a href="#brasil">Senior Top</a><a href="#plataformas">Formatos</a>
   </nav>
 </header>
 
@@ -664,27 +664,6 @@ section.dark,section.dark+section{border-top:0}
   </div>
 </section>
 
-<!-- 08 PATROCÍNIO MASTER -->
-<section id="master" class="dark" data-sec>
-  <div class="wrap"><div class="sechead rv"><span>Patrocinador master do evento</span></div></div>
-  <div class="wrap namegrid">
-    <div class="stack rv">
-      <h2 class="h2">A marca no evento inteiro.</h2>
-      <p class="body">Como patrocinadora master, a Inpasa assina o evento e o Grande Prêmio, com presença na pista, na premiação e na transmissão. O lounge passa a ser a casa da marca dentro do evento.</p>
-      <p class="rot" id="nameRot"><b>Grande Prêmio</b> INPASA</p>
-      <div class="dlv">
-        <div><b>Naming</b><span>Nome da marca no evento ou no Grande Prêmio</span></div>
-        <div><b>Obstáculo assinatura</b><span>Montantes e varas com a identidade Inpasa</span></div>
-        <div><b>Placas e backdrop</b><span>Pista, pódio e área de entrevistas</span></div>
-        <div><b>Locução</b><span>Citações do speaker durante as provas</span></div>
-        <div><b>Transmissão</b><span>Marca presente nas imagens, quando houver</span></div>
-        <div><b>Premiação</b><span>Executivo Inpasa na entrega do troféu</span></div>
-      </div>
-    </div>
-    <figure class="fence rv" style="margin:0"><img class="fimg on" data-k="a" data-cap="Obstáculo assinatura · conceito ilustrativo" src="assets/obstaculo-inpasa.jpg" alt="Conjunto saltando obstáculo com montantes e varas com a marca Inpasa" loading="lazy" style="object-position:34% 20%"><img class="fimg" data-k="b" data-cap="Placas de pista · conceito ilustrativo" src="assets/placas-inpasa.jpg" alt="Conjunto de adestramento passando diante das placas de pista com a marca Inpasa" loading="lazy" style="object-position:4% 30%"><img class="fimg" data-k="c" data-cap="Backdrop de premiação · conceito ilustrativo" src="assets/backdrop-inpasa.jpg" alt="Cavaleiro premiado com medalha e flores diante do backdrop com as marcas Inpasa e CBH" loading="lazy" style="object-position:50% 20%"><figcaption class="cap" id="fenceCap">Obstáculo assinatura · conceito ilustrativo</figcaption></figure>
-  </div>
-</section>
-
 <!-- 09 CIRCUITO SENIOR TOP -->
 <section id="brasil" data-sec>
   <div class="wrap">
@@ -755,7 +734,7 @@ section.dark,section.dark+section{border-top:0}
   <div class="wrap">
     <div class="stack rv">
       <h2 class="h2">Formatos, não cotas.</h2>
-      <p class="body">Quatro formatos. A Inpasa pode começar por um evento e crescer até a temporada completa.</p>
+      <p class="body">Quatro formatos. A Inpasa pode começar por um evento e crescer até a temporada completa. Ativações dentro de cada evento dependem dos acordos de cada comitê organizador.</p>
     </div>
     <div class="plats">
       <div class="platlist rv" role="tablist" id="platlist" aria-label="Formatos"></div>
@@ -831,7 +810,6 @@ const modalities = [
    ex:"Duas Arenas, Uma Energia"}
 ];
 
-const names = [["Grande Prêmio","INPASA","a"],["Copa INPASA","de Adestramento","b"],["Troféu INPASA","ao campeão","c"]];
 const casaNames = ['Lounge <b>INPASA</b>','<b>INPASA</b> Conecta','Camarote <b>INPASA</b>'];
 
 /* Circuito Senior Top 2027: etapas por praça (Brasileiro com sede a definir) */
@@ -844,18 +822,18 @@ const stops = [
 
 /* Investimento: null aparece como "Sob consulta" */
 const platforms = [
-  {name:"Lounge por evento", price:null, per:"por evento", idea:"Lounge de relacionamento em um evento selecionado, com hospitalidade, experiência e convidados da Inpasa.", items:["Lounge com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Placas e backdrop","Relatório da etapa"]},
-  {name:"Patrocinador master", price:null, per:"por evento", idea:"A Inpasa assina o evento e o Grande Prêmio, e o lounge passa a ser a casa da marca dentro dele.", items:["Naming do evento ou do GP","Lounge de relacionamento","Obstáculo, placas e backdrop","Premiação com executivo Inpasa","Locução e transmissão","Conteúdo do evento"]},
+  {name:"Lounge por evento", price:null, per:"por evento", idea:"Lounge de relacionamento em um evento selecionado, com hospitalidade, experiência e convidados da Inpasa.", items:["Lounge com vista para a pista","Hospitalidade e anfitriões","Experiência proprietária","Identidade Inpasa no lounge","Relatório da etapa"]},
+  {name:"Prêmio Hipismo Brasil", price:null, per:"por edição", idea:"A noite que reúne todas as modalidades, com categoria assinada pela Inpasa e convidados da marca na cerimônia.", items:["Categoria INPASA","Entrega do troféu no palco","Mesa INPASA","Recepção com a marca","Conteúdo com os premiados"]},
   {name:"Circuito Senior Top", price:null, per:"", idea:"O lounge acompanha as 10 etapas do circuito em quatro estados, com naming da temporada e anfitrião comercial em cada praça.", items:["Naming do circuito","Lounge nas 10 etapas","Anfitrião comercial regional","Experiências proprietárias","Final e TOP TEN","Ranking e conteúdo"]},
-  {name:"Parceria", full:true, price:null, per:"", idea:"Circuito Senior Top, patrocínio master de eventos selecionados e Prêmio Hipismo Brasil, com o lounge como plataforma da temporada.", items:["Circuito Senior Top","Master de eventos selecionados","Prêmio Hipismo Brasil","Lounge em todas as etapas","Conteúdo, PR e digital","Revisão trimestral de resultados"]}
+  {name:"Parceria", full:true, price:null, per:"", idea:"Circuito Senior Top e Prêmio Hipismo Brasil, com o lounge como plataforma da temporada inteira.", items:["Circuito Senior Top","Prêmio Hipismo Brasil","Lounge em todas as etapas","Experiências proprietárias","Conteúdo, PR e digital","Revisão trimestral de resultados"]}
 ];
 
-const delivCols = ["Lounge","Master","Senior Top","360º"];
+const delivCols = ["Lounge","Prêmio","Senior Top","360º"];
 const deliv = [
-  ["Lounge de relacionamento",2,2,2,2],["Hospitalidade e anfitriões",2,2,2,2],["Experiência proprietária",1,1,2,2],
-  ["Naming do evento ou do GP",0,2,1,2],["Naming do circuito",0,0,2,2],["Todas as etapas do circuito",0,0,2,2],["Prêmio Hipismo Brasil",0,0,0,2],
-  ["Obstáculo, placas e backdrop",2,2,2,2],["Premiação",0,2,2,2],["Locução e transmissão",0,2,2,2],["Conteúdo proprietário",1,2,2,2],
-  ["Redes e site CBH",2,2,2,2],["Relatório por etapa",2,2,2,2],["Revisão trimestral",0,0,2,2]
+  ["Lounge de relacionamento",2,0,2,2],["Hospitalidade e anfitriões",2,2,2,2],["Experiência proprietária",1,0,2,2],
+  ["Naming do circuito",0,0,2,2],["Todas as etapas do circuito",0,0,2,2],["Final e TOP TEN",0,0,2,2],
+  ["Categoria INPASA no Prêmio",0,2,0,2],["Mesa INPASA na cerimônia",0,2,0,2],
+  ["Conteúdo proprietário",1,2,2,2],["Redes e site CBH",2,2,2,2],["Relatório por etapa",2,1,2,2],["Revisão trimestral",0,0,2,2]
 ];
 
 /* ===================================================================== */
@@ -896,7 +874,6 @@ $("#deliv").innerHTML=`<thead><tr><th></th>${delivCols.map((c,i)=>`<th class="${
 /* rotadores */
 function rotate(el,list,ms,fmt){let i=0;if(reduce)return;setInterval(()=>{el.classList.add("swap");setTimeout(()=>{i=(i+1)%list.length;el.innerHTML=fmt(list[i]);el.classList.remove("swap")},500)},ms)}
 rotate($("#casaRot"),casaNames,3400,x=>x);
-rotate($("#nameRot"),names,3600,([a,b,k])=>{document.querySelectorAll(".fence .fimg").forEach(im=>{const on=im.dataset.k===k;im.classList.toggle("on",on);if(on&&im.dataset.cap)$("#fenceCap").textContent=im.dataset.cap});return `<b>${a}</b> ${b}`});
 
 /* mapa */
 (function(){
